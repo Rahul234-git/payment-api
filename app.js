@@ -8,6 +8,9 @@ config({path:'./config/config.env'});
 export const app = express();
 
 app.use(cors());
+app.use((req,res) => {
+    res.setHeader("Access-Control-Allow-Credentials","true");
+})
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 
